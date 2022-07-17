@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table cellpadding="0px" cellspacing="0px" align="center"
+       border="1px solid red" id="table"
+>
+    <thead>学生信息表</thead>
+    <tr>
+        <td><input type="checkbox" name="cb" id="allCb"></td>
+        <td>编号</td>
+        <td>姓名</td>
+        <td>性别</td>
+        <td>操作</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="cb"></td>
+        <td>1</td>
+        <td>令狐冲</td>
+        <td>男</td>
+        <td><a href="javascript:void(0);" onclick="del(this)">删除</a> </td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="cb"></td>
+        <td>2</td>
+        <td>任我行</td>
+        <td>男</td>
+        <td><a href="javascript:void(0);" onclick="del(this)">删除</a> </td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="cb"></td>
+        <td>3</td>
+        <td>岳不群</td>
+        <td>?</td>
+        <td><a href="javascript:void(0);" onclick="del(this)">删除</a> </td>
+    </tr>
+</table>
+<div align="center">
+<button type="button" id="btn1"  style="width: 80px;height: 30px">全选</button>
+<button type="button" id="btn2"  style="width: 80px;height: 30px">全不选</button>
+<button type="button" id="btn3"  style="width: 80px;height: 30px">反选</button>
+</div>
+</body>
+
+<script>
+    document.getElementById('btn1').onclick=function (){
+        var checkbox=document.getElementsByName('cb')
+        for (let i = 0; i < checkbox.length; i++) {
+            checkbox[i].checked=true;
+        }
+    }
+
+    document.getElementById('btn2').onclick=function (){
+        var checkbox=document.getElementsByName('cb')
+        for (let i = 0; i < checkbox.length; i++) {
+            checkbox[i].checked=false;
+        }
+    }
+
+    document.getElementById('btn3').onclick=function (){
+        var checkbox=document.getElementsByName('cb');
+        for (let i = 0; i < checkbox.length; i++) {
+            if (checkbox[i].checked){
+                checkbox[i].checked=false;
+            }else {
+                checkbox[i].checked=true;
+            }
+        }
+    }
+
+
+    document.getElementById("allCb").onclick = function(){
+        var cbs = document.getElementsByName("cb");
+        var allCb = document.getElementById("allCb");
+        for (var i = 0; i < cbs.length; i++) {
+            cbs[i].checked = allCb.checked;
+        }
+
+    }
+
+</script>
+
+
+
+</html>

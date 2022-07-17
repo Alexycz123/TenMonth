@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    var arr=["语文","数学","科学","语文"];
+    console.log(arr);
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i]==="语文"){
+            arr.splice(i,1);
+        }
+    }
+    console.log(arr);
+
+    var arr2=[2,-10,-230,200];
+    var sortNum=function (a,b){
+        return a-b;
+    }
+    arr2.sort(sortNum)
+    console.log(arr2)
+
+
+</script>
+
+
+</body>
+</html>

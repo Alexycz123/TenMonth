@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div align="center">
+<input type="text" id="id" placeholder="请输入编号">
+<input type="text" id="name" placeholder="请输入姓名">
+<input type="text" id="sex" placeholder="请输入性别">
+<button type="button" id="btn"  style="width: 80px;height: 30px">添加</button>
+</div>
+<table cellpadding="0px" cellspacing="0px" align="center"
+border="1px solid red" id="table"
+>
+    <thead>学生信息表</thead>
+    <tr>
+        <td>编号</td>
+        <td>姓名</td>
+        <td>性别</td>
+        <td>操作</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>令狐冲</td>
+        <td>男</td>
+        <td><a href="javascript:void(0);" onclick="del(this)">删除</a> </td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>任我行</td>
+        <td>男</td>
+        <td><a href="javascript:void(0);" onclick="del(this)">删除</a> </td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>岳不群</td>
+        <td>?</td>
+        <td><a href="javascript:void(0);" onclick="del(this)">删除</a> </td>
+    </tr>
+</table>
+</body>
+<script>
+    document.getElementById('btn').onclick=function (){
+        var id=document.getElementById('id').value;
+        var name=document.getElementById('name').value;
+        var sex=document.getElementById('sex').value;
+        var table=document.getElementById('table');
+
+
+        var tr = document.createElement("tr");
+        var td_id=document.createElement("td");
+        var text_id=document.createTextNode(id);
+
+        td_id.appendChild(text_id);
+
+        tr.appendChild(td_id);
+
+        var td_name=document.createElement("td");
+        var text_name=document.createTextNode(name);
+        td_name.appendChild(text_name);
+        tr.appendChild(td_name);
+
+        var td_sex=document.createElement("td");
+        var text_sex=document.createTextNode(sex);
+        td_sex.appendChild(text_sex);
+        tr.appendChild(td_sex);
+
+        var td_option = document.createElement("td");
+
+        var a=document.createElement("a");
+        a.setAttribute("href","javascript:void(0);")
+        a.setAttribute("onclick","del(this)");
+        var text_a = document.createTextNode("删除");
+        a.appendChild(text_a);
+        td_option.appendChild(a);
+
+        tr.appendChild(td_option);
+        table.appendChild(tr);
+    }
+
+
+    function del(obj){
+        var talbe=obj.parentNode.parentNode.parentNode;
+        var tr=obj.parentNode.parentNode;
+        talbe.removeChild(tr)
+    }
+
+
+
+
+</script>
+
+
+
+</html>
